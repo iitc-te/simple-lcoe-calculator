@@ -4,7 +4,8 @@
  * Initialisation order matters:
  *   1. io.load()        — restore data.in from localStorage (before sliders)
  *   2. io.loadFromUrl() — overlay URL query params (takes priority over storage)
- *   3. sliders.init()   — create sliders starting from data.in values
+ *   3. io.writeInputs() — sync plain <input> DOM elements from data.in
+ *   4. sliders.init()   — create sliders starting from data.in values
  *   4. Calculate()      — initial computation and display
  *   5. event bindings   — wire plain <input> changes
  *
@@ -15,6 +16,7 @@ jQuery(document).ready(function () {
 
     io.load();
     io.loadFromUrl();
+    io.writeInputs();
     sliders.init();
 
     Calculate();

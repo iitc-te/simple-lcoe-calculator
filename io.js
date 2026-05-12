@@ -3,6 +3,7 @@
  *
  * Responsibilities:
  *   readInputs()     read every UI control into data.in
+ *   writeInputs()    write data.in back to plain <input> elements (not sliders)
  *   save()           persist data.in to localStorage
  *   load()           restore data.in from localStorage (called before sliders.init)
  *   loadFromUrl()    overlay data.in with validated query-string params
@@ -23,6 +24,20 @@ var io = {
                 ? document.getElementById('slider-' + key).noUiSlider.get()
                 : jQuery('#' + key).val();
             data.in[key] = (rule.parse === 'int') ? parseInt(raw, 10) : parseFloat(raw);
+        });
+    },
+
+    /**
+     * Write data.in values back to plain <input> DOM elements.
+     * Slider fields are intentionally skipped — sliders read data.in directly
+     * via their start value in sliders.init(). Call this after load() and
+     * loadFromUrl() so the DOM reflects whatever was restored into data.in.
+     */
+    writeInputs: function () {
+        jQuery.each(data.rules, function (key, rule) {
+            if (!rule.slider) {
+                jQuery('#' + key).val(data.in[key]);
+            }
         });
     },
 
