@@ -1,0 +1,99 @@
+/*
+ * Colour palette: Tableau 10
+ *   Blue   #4E79A7   primary accent (navbar, sliders, LCOE border)
+ *   Teal   #76B7B2   secondary (O&M chart segment)
+ *   Green  #59A14F   undiscounted-cost segment
+ *   Orange #F28E2B   fuel segment
+ *   Yellow #EDC948   tax segment
+ *   Grey   #BAB0AC   discount-effect segment
+ *
+ * UI tints derived from Blue #4E79A7:
+ *   Navbar bg      #edf2f7   (very light blue)
+ *   Result box bg  #dce6f0   (light blue)
+ *   Text dark      #2d5580   (darkened blue)
+ *   Focus border   #6a9cc7   (lightened blue)
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Figtree:400,600');
+
+body {
+    font-family: "Figtree", Calibri, Helvetica, sans-serif;
+}
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: unset;
+}
+
+/* ── Navbar ────────────────────────────────────────────────────────────────── */
+
+.navbar-app {
+    background-color: #edf2f7;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* ── Main layout ───────────────────────────────────────────────────────────── */
+
+main {
+    padding: 3rem 0;
+}
+
+.col-panel {
+    padding: 1.5rem;
+}
+
+/* ── LCOE result box ───────────────────────────────────────────────────────── */
+
+.lcoe-result-box {
+    background-color: #dce6f0;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.lcoe-value {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #4E79A7;
+    border-radius: 0;
+    color: #2d5580;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.25rem 0;
+    text-align: right;
+}
+
+.lcoe-value:focus {
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom-color: #6a9cc7;
+    color: #2d5580;
+}
+
+/* ── noUiSlider ────────────────────────────────────────────────────────────── */
+
+.slider-field {
+    margin-top: 0.6rem;
+}
+
+.noUi-tooltip {
+    background-color: #4E79A7;
+    border-color: #4E79A7;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 2px 7px;
+}
+
+.noUi-horizontal .noUi-tooltip {
+    top: auto;
+    bottom: 120%;
+}
+
+/* ── Share link ────────────────────────────────────────────────────────────── */
+
+.share-url-input {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
