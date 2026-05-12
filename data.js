@@ -42,7 +42,7 @@ var data = {
 
     rules: {
         cDurat:  { parse: 'int',   min: 1,   max: 25,    step: 1,   slider: true,  valid: function (v) { return v > 0  && v <= 25;    } },
-        cCosts:  { parse: 'float', min: 1,   max: 10000,                           valid: function (v) { return v > 0  && v <= 10000; } },
+        cCosts:  { parse: 'float', min: 1,   max: 50000,                           valid: function (v) { return v > 0  && v <= 50000; } },
         oDurat:  { parse: 'int',   min: 2,   max: 100,   step: 1,   slider: true,  valid: function (v) { return v > 1  && v <= 100;   } },
         oCapaf:  { parse: 'float', min: 0.1, max: 100,   step: 0.1, slider: true,  valid: function (v) { return v > 0  && v <= 100;   } },
         fCosts:  { parse: 'float', min: 0,   max: 1000,                            valid: function (v) { return v >= 0 && v <= 1000;  } },
