@@ -42,7 +42,7 @@
         <div class="container-fluid">
             <div class="row">
 
-                <div class="col-md-4 col-panel">
+                <div class="col-md-5 col-panel">
 
                     <div class="mb-4">
                         <label id="lbl-cDurat" class="form-label">Construction duration (Years)</label>
@@ -91,7 +91,7 @@
 
                 </div>
 
-                <div class="col-md-8 col-panel">
+                <div class="col-md-7 col-panel">
 
                     <div class="lcoe-result-box mb-4">
                         <label class="form-label" for="rr1">LCOE ($ per MWh)</label>
@@ -102,13 +102,18 @@
                     <div id="chart" class="mb-4" aria-hidden="true"></div>
 
                     <div id="share-box" class="d-none mb-0">
-                        <div class="input-group input-group-sm">
-                            <input type="text" id="share-url" class="form-control share-url-input"
-                                   aria-label="Shareable link to this calculation"
-                                   readonly onclick="this.select();" />
+                        <label class="form-label" for="share-url">
+                            &nbsp;
+                            <i class="bi bi-share"></i>
+                            &nbsp;
+                            Share this calculation
+                        </label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="share-url"
+                                   readonly onfocus="this.select();" />
                             <button class="btn btn-outline-secondary" id="btn-copy" type="button"
                                     aria-label="Copy link to clipboard">
-                                <i class="bi bi-clipboard" aria-hidden="true"></i> Copy
+                                <i class="bi bi-clipboard" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>

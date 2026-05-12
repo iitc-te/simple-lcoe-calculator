@@ -49,7 +49,7 @@ var chart = {
         /* Bar definitions */
         var bars = [
             {
-                label: 'Cost Breakdown',
+                label: 'Cost breakdown',
                 segs: [
                     { pct: data.out.pct_capex, key: 'capex' },
                     { pct: data.out.pct_om,    key: 'om'    },

@@ -47,7 +47,7 @@ main {
 /* ── LCOE result box ───────────────────────────────────────────────────────── */
 
 .lcoe-result-box {
-    background-color: #dce6f0;
+    background-color: #f6f6f6;
     border-radius: 0.5rem;
     padding: 1.5rem;
 }
@@ -91,9 +91,3 @@ main {
     bottom: 120%;
 }
 
-/* ── Share link ────────────────────────────────────────────────────────────── */
-
-.share-url-input {
-    font-size: 0.75rem;
-    color: #6b7280;
-}

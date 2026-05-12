@@ -6,7 +6,7 @@
  *   2. io.loadFromUrl() — overlay URL query params (takes priority over storage)
  *   3. sliders.init()   — create sliders starting from data.in values
  *   4. Calculate()      — initial computation and display
- *   5. event bindings   — wire plain <input> changes and the copy-link button
+ *   5. event bindings   — wire plain <input> changes
  *
  * Depends on: io.js, sliders.js, calculation.js
  */
@@ -24,16 +24,12 @@ jQuery(document).ready(function () {
     });
 
     jQuery(document).on('click', '#btn-copy', function () {
-        var url = jQuery('#share-url').val();
-        navigator.clipboard.writeText(url).then(function () {
-            var btn = jQuery('#btn-copy');
-            btn.html('<i class="bi bi-clipboard-check"></i> Copied!');
+        navigator.clipboard.writeText(jQuery('#share-url').val()).then(function () {
+            jQuery('#btn-copy i').removeClass('bi-clipboard').addClass('bi-clipboard-check');
             setTimeout(function () {
-                btn.html('<i class="bi bi-clipboard"></i> Copy link');
+                jQuery('#btn-copy i').removeClass('bi-clipboard-check').addClass('bi-clipboard');
             }, 2000);
         }).catch(function () {
-            /* Clipboard API unavailable (non-HTTPS or denied): select the field
-               so the user can copy manually. */
             jQuery('#share-url').select();
         });
     });
